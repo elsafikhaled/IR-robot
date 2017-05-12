@@ -6,7 +6,8 @@
  */
 #include "PWM1_EKE.h"
 
-void PWM1_EKE_init(void){
+void PWM1_EKE_init(void)
+{
   TCCR1A=(1<<COM1B1)|(1<<COM1A1)|(1<<WGM11);
   TCCR1A&=~(1<<FOC1B)|(1<<FOC1A);
   TCCR1B=(1<<WGM12)|(1<<WGM13)|(1<<CS10)|(1<<CS12);
@@ -17,7 +18,8 @@ void PWM1_EKE_init(void){
 }
 
 
-void PWM1_EKE_duty(U16_t duty){
+void PWM1_EKE_duty(U16_t duty)
+{
 
   OCR1B=duty;
   OCR1A=duty;
@@ -26,14 +28,16 @@ void PWM1_EKE_duty(U16_t duty){
 
 
 
-void PWM1_EKE_start(void){
+void PWM1_EKE_start(void)
+{
 
 	OCR1B=0;
 	OCR1A=0;
 
 }
 
-void PWM1_EKE_stop(void){
+void PWM1_EKE_stop(void)
+{
 
   TCCR1B=0;
 
